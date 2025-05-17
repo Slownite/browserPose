@@ -29,9 +29,11 @@
         devShells.default = pkgs.mkShell {
           buildInputs = [
             pkgs.python312
-            pkgs.python312Packages.pip
+            pkgs.python313Packages.pip
             pkgs.neovim
             pkgs.tree
+            pkgs.git
+            pkgs.cmake
             pythonForNeovim
           ] ++ numpyDeps;
 

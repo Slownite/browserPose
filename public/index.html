@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BrowserPose - Action Recognition</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center font-sans">
+
+  <div class="bg-white shadow-xl rounded-2xl p-8 w-full max-w-xl space-y-6">
+    <h1 class="text-3xl font-semibold text-gray-800 text-center">🎥 BrowserPose</h1>
+    <p class="text-center text-gray-600">Real-Time Human Action Recognition in Your Browser</p>
+
+    <div class="flex flex-col items-center space-y-4">
+      <video id="webcam" autoplay playsinline width="256" height="256" class="rounded-md border border-gray-300 shadow-sm"></video>
+      <canvas id="canvas" width="256" height="256" class="hidden"></canvas>
+
+      <button onclick="startRecognition()"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200">
+        Start Recognition
+      </button>
+    </div>
+
+    <div id="prediction" class="text-center text-lg font-medium text-green-600">
+      Prediction: ...
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
